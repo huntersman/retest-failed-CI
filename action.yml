@@ -13,8 +13,7 @@ branding:
 inputs:
   github-token:
     description:
-      GitHub token for authentication. Use ${{ secrets.GITHUB_TOKEN }} or a PAT
-      with workflow permissions.
+      GitHub token for authentication.
     required: true
 
 # Define your outputs here.
