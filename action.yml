@@ -12,8 +12,7 @@ branding:
 # Define your inputs here.
 inputs:
   github-token:
-    description:
-      GitHub token for authentication.
+    description: GitHub token for authentication.
     required: true
 
 # Define your outputs here.
