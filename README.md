@@ -86,8 +86,3 @@ The action requires the following permissions:
 - `pull-requests: read` - To read pull request information
 
 These are configured in the workflow file as shown in the usage example above.
-
-## Development
-
-See [DEVELOPMENT.md](./DEVELOPMENT.md) for information on how to develop and
-contribute to this action.
