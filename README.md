@@ -25,7 +25,7 @@ name: Retest Failed CI
 
 on:
   issue_comment:
-    types: [ created ]
+    types: [created]
 
 jobs:
   retest:
@@ -47,13 +47,13 @@ jobs:
 ### Inputs
 
 | Input          | Description                                                                                      | Required | Default |
-|----------------|--------------------------------------------------------------------------------------------------|----------|---------|
+| -------------- | ------------------------------------------------------------------------------------------------ | -------- | ------- |
 | `github-token` | GitHub token for authentication. Use `${{ secrets.GITHUB_TOKEN }}` or a PAT with workflow perms. | Yes      | -       |
 
 ### Outputs
 
 | Output        | Description                                           |
-|---------------|-------------------------------------------------------|
+| ------------- | ----------------------------------------------------- |
 | `rerun-count` | Number of failed workflow runs that were re-triggered |
 
 ## How It Works

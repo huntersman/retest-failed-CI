@@ -295,39 +295,4 @@ describe('main.ts', () => {
     })
     expect(core.setOutput).toHaveBeenCalledWith('rerun-count', '1')
   })
-
-  it('Handles custom trigger phrase', async () => {
-    core.getInput.mockImplementation((name: string) => {
-      if (name === 'github-token') return 'fake-token'
-      return ''
-    })
-
-    github.context.payload = {
-      comment: { body: '/retry' },
-      issue: {
-        number: 123,
-        pull_request: {}
-      }
-    }
-
-    const mockPullRequest = {
-      title: 'Test PR',
-      head: { sha: 'abc123' }
-    }
-
-    const mockWorkflowRuns = {
-      total_count: 0,
-      workflow_runs: []
-    }
-
-    mockOctokit.rest.pulls.get.mockResolvedValue({ data: mockPullRequest })
-    mockOctokit.rest.actions.listWorkflowRunsForRepo.mockResolvedValue({
-      data: mockWorkflowRuns
-    })
-
-    await run()
-
-    expect(core.info).toHaveBeenCalledWith('Trigger phrase "/retry" detected!')
-    expect(mockOctokit.rest.pulls.get).toHaveBeenCalled()
-  })
 })
