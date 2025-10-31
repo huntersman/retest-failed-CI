@@ -25,7 +25,7 @@ name: Retest Failed CI
 
 on:
   issue_comment:
-    types: [created]
+    types: [ created ]
 
 jobs:
   retest:
@@ -47,24 +47,14 @@ jobs:
 ### Inputs
 
 | Input          | Description                                                                                      | Required | Default |
-| -------------- | ------------------------------------------------------------------------------------------------ | -------- | ------- |
+|----------------|--------------------------------------------------------------------------------------------------|----------|---------|
 | `github-token` | GitHub token for authentication. Use `${{ secrets.GITHUB_TOKEN }}` or a PAT with workflow perms. | Yes      | -       |
 
 ### Outputs
 
 | Output        | Description                                           |
-| ------------- | ----------------------------------------------------- |
+|---------------|-------------------------------------------------------|
 | `rerun-count` | Number of failed workflow runs that were re-triggered |
-
-## How It Works
-
-1. Listens for `issue_comment` events on pull requests
-2. Checks if the comment matches the trigger phrase (e.g., `/retest`)
-3. Fetches the PR details and gets the head commit SHA
-4. Retrieves all workflow runs for that commit
-5. Filters for failed, timed-out, or cancelled workflows
-6. Re-runs each failed workflow
-7. Reports the number of workflows that were re-triggered
 
 ## Permissions
 
