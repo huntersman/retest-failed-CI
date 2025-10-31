@@ -11,11 +11,9 @@ someone comments "/retest" on a pull request. :rocket:
 
 ## Features
 
-- 🔄 Automatically re-runs failed, timed-out, and cancelled workflows
 - 💬 Triggered by commenting `/retest` (or custom phrase) on a PR
 - 🎯 Only reruns workflows that actually failed
 - 📊 Reports the number of workflows re-triggered
-- ⚙️ Configurable trigger phrase
 
 ## Usage
 
@@ -27,7 +25,7 @@ name: Retest Failed CI
 
 on:
   issue_comment:
-    types: [created]
+    types: [ created ]
 
 jobs:
   retest:
@@ -48,24 +46,15 @@ jobs:
 
 ### Inputs
 
-| Input            | Description                                                                                        | Required | Default   |
-| ---------------- | -------------------------------------------------------------------------------------------------- | -------- | --------- |
-| `github-token`   | GitHub token for authentication. Use `${{ secrets.GITHUB_TOKEN }}` or a PAT with workflow perms.   | Yes      | -         |
+| Input          | Description                                                                                      | Required | Default |
+|----------------|--------------------------------------------------------------------------------------------------|----------|---------|
+| `github-token` | GitHub token for authentication. Use `${{ secrets.GITHUB_TOKEN }}` or a PAT with workflow perms. | Yes      | -       |
 
 ### Outputs
 
 | Output        | Description                                           |
-| ------------- | ----------------------------------------------------- |
+|---------------|-------------------------------------------------------|
 | `rerun-count` | Number of failed workflow runs that were re-triggered |
-
-### Example with Custom Trigger Phrase
-
-```yaml
-- name: Retest Failed CI
-  uses: huntersman/retest-failed-CI@v1
-  with:
-    github-token: ${{ secrets.GITHUB_TOKEN }}
-```
 
 ## How It Works
 
@@ -84,5 +73,3 @@ The action requires the following permissions:
 - `actions: write` - To re-run workflow runs
 - `contents: read` - To read repository contents
 - `pull-requests: read` - To read pull request information
-
-These are configured in the workflow file as shown in the usage example above.
