@@ -37,7 +37,6 @@ describe('main.ts', () => {
     // Set default inputs
     core.getInput.mockImplementation((name: string) => {
       if (name === 'github-token') return 'fake-token'
-      if (name === 'trigger-phrase') return '/retest'
       return ''
     })
 
@@ -300,7 +299,6 @@ describe('main.ts', () => {
   it('Handles custom trigger phrase', async () => {
     core.getInput.mockImplementation((name: string) => {
       if (name === 'github-token') return 'fake-token'
-      if (name === 'trigger-phrase') return '/retry'
       return ''
     })
 

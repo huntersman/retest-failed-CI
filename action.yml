@@ -16,11 +16,6 @@ inputs:
       GitHub token for authentication. Use ${{ secrets.GITHUB_TOKEN }} or a PAT
       with workflow permissions.
     required: true
-  trigger-phrase:
-    description:
-      The comment phrase that triggers the retest (default is "/retest")
-    required: false
-    default: '/retest'
 
 # Define your outputs here.
 outputs:

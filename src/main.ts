@@ -10,7 +10,7 @@ export async function run(): Promise<void> {
   try {
     // Get inputs
     const token = core.getInput('github-token', { required: true })
-    const triggerPhrase = core.getInput('trigger-phrase', { required: false })
+    const triggerPhrase: string = '/retest'
 
     // Get event context
     const { context } = github

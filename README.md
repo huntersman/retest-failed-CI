@@ -44,7 +44,6 @@ jobs:
         uses: huntersman/retest-failed-CI@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          trigger-phrase: '/retest' # Optional, defaults to '/retest'
 ```
 
 ### Inputs
@@ -52,7 +51,6 @@ jobs:
 | Input            | Description                                                                                        | Required | Default   |
 | ---------------- | -------------------------------------------------------------------------------------------------- | -------- | --------- |
 | `github-token`   | GitHub token for authentication. Use `${{ secrets.GITHUB_TOKEN }}` or a PAT with workflow perms.   | Yes      | -         |
-| `trigger-phrase` | The comment phrase that triggers the retest. Comments must match this phrase exactly (after trim). | No       | `/retest` |
 
 ### Outputs
 
@@ -67,7 +65,6 @@ jobs:
   uses: huntersman/retest-failed-CI@v1
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
-    trigger-phrase: '/retry-ci'
 ```
 
 ## How It Works
