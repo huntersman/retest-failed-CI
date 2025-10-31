@@ -31271,7 +31271,7 @@ async function run() {
     try {
         // Get inputs
         const token = coreExports.getInput('github-token', { required: true });
-        const triggerPhrase = coreExports.getInput('trigger-phrase', { required: false });
+        const triggerPhrase = '/retest';
         // Get event context
         const { context } = github$1;
         const { eventName, payload } = context;
